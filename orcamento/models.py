@@ -1,11 +1,13 @@
+from collections import deque
+
 from django.db import models
 # Create your models here.
 
 
 class Servico(models.Model):
     name = models.CharField(max_length=65)
-    value = models.FloatField()
-    total_value = models.FloatField()
+    value = models.FloatField(default=0)
+    total_value = models.FloatField(default=0)
 
     def __str__(self):
         return self.name
@@ -13,9 +15,9 @@ class Servico(models.Model):
 
 class Material(models.Model):
     name = models.CharField(max_length=65)
-    value = models.FloatField()
-    quantity = models.IntegerField()
-    total_value = models.FloatField()
+    value = models.FloatField(default=0)
+    quantity = models.IntegerField(default=0)
+    total_value = models.FloatField(default=0)
 
     def __str__(self):
         return self.name
